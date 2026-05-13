@@ -1,1 +1,0 @@
-console.log("NEXTSTEP Automation System Ready");

@@ -1,38 +1,40 @@
-const express = require('express');
+console.log("OPPORTUNITY ROUTES LOADED");
+const express = require("express");
+
 const router = express.Router();
 
 const {
-    searchOpportunities,
-    filterOpportunities,
-    createOpportunity,
-    updateOpportunity,
-    deleteOpportunity,
-    getAllOpportunities
-} = require('../controllers/opportunityController');
+  getAllOpportunities,
+  searchOpportunities,
+  filterOpportunities,
+  createOpportunity,
+  updateOpportunity,
+  deleteOpportunity,
+} = require("../controllers/opportunityController");
 
 
-// SEARCH API
-router.get('/search', searchOpportunities);
+// GET ALL OPPORTUNITIES
+router.get("/", getAllOpportunities);
 
 
-// FILTER API
-router.get('/filter', filterOpportunities);
+// SEARCH OPPORTUNITIES
+router.get("/search", searchOpportunities);
 
 
-// POST API
-router.post('/', createOpportunity);
+// FILTER OPPORTUNITIES
+router.get("/filter", filterOpportunities);
 
 
-// UPDATE API
-router.put('/:id', updateOpportunity);
+// CREATE OPPORTUNITY
+router.post("/", createOpportunity);
 
 
-// DELETE API
-router.delete('/:id', deleteOpportunity);
+// UPDATE OPPORTUNITY
+router.put("/:id", updateOpportunity);
 
 
-// GET ALL API
-router.get('/', getAllOpportunities);
+// DELETE OPPORTUNITY
+router.delete("/:id", deleteOpportunity);
 
 
 module.exports = router;
